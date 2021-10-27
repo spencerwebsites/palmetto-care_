@@ -5,7 +5,59 @@
 	margin-right: auto;
 }
 
+// Container or wrapper
+@mixin container {
+    padding-left: $container__spacing;
+    padding-right: $container__spacing;
+    width: 100%;
+}
+
+// Negative container or wrapper
+@mixin negative-container {
+    margin-left: -$container__spacing;
+    margin-right: -$container__spacing;
+    padding-left: $container__spacing;
+    padding-right: $container__spacing;
+}
+
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+@mixin transition-properties {
+    transition-timing-function: $transition__timing-function;
+    transition-duration: $transition__duration;
+}
+
+@mixin transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    @include transition-properties;
+}
+
+// Responsive
+@mixin media($res) {
+	@if mobile == $res {
+		@media only screen and (min-width: $screen__width-sm) {
+			@content;
+		}
+	}
+
+	@if tablet == $res {
+		@media only screen and (min-width: $screen__width-md) {
+			@content;
+		}
+	}
+
+	@if desktop == $res {
+		@media only screen and (min-width: $screen__width-lg) {
+			@content;
+		}
+	}
+
+	@if wide == $res {
+		@media only screen and (min-width: $screen__width-xl) {
+			@content;
+		}
+	}
 }

@@ -1,0 +1,85 @@
+.wp-block-button {
+
+    .wp-block-button__link {
+        border: 2px solid;
+        border-radius: 4px;
+        font-size: .75rem;
+        font-weight: 600;
+        min-width: 7rem;
+        padding: .625rem 1rem;
+        text-transform: uppercase;
+        @include transition-properties;
+
+        &.has-main-background-color {
+            border-color: $color__main;
+
+            &:active,
+            &:hover,
+            &:focus,
+            &:visited {
+                background-color: $color__main-low;
+                border-color: $color__main-low;
+            }
+        }
+
+        &.has-accent-background-color {
+            border-color: $color__accent;
+            
+            &:active,
+            &:hover,
+            &:focus,
+            &:visited {
+                background-color: $color__accent-low;
+                border-color: $color__accent-low;
+            }
+        }
+
+        &.has-gray-background-color {
+            border-color: $color__gray;
+            
+            &:active,
+            &:hover,
+            &:focus,
+            &:visited {
+                background-color: $color__gray-low;
+                border-color: $color__gray-low;
+                color: $color__text-main;
+            }
+        }
+    }
+
+    &.is-style-outline .wp-block-button__link {
+        &.has-main-color {
+            color: $color__main;
+
+            &:active,
+            &:hover,
+            &:focus,
+            &:visited {
+                background-color: $color__main-high;
+            }
+        }
+
+        &.has-accent-color {
+            color: $color__accent;
+
+            &:active,
+            &:hover,
+            &:focus,
+            &:visited {
+                background-color: $color__accent-high;
+            }
+        }
+
+        &.has-gray-color {
+            color: $color__gray;
+
+            &:active,
+            &:hover,
+            &:focus,
+            &:visited {
+                background-color: $color__gray-high;
+            }
+        }
+    }
+}

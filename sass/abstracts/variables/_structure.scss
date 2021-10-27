@@ -1,2 +1,12 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+$screen__width-sm: 640px;
+$screen__width-md: 768px;
+$screen__width-lg: 1024px;
+$screen__width-xl: 1280px;
+
+$container__spacing: 5.62vw;
+
+$transition__timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$transition__duration: 300ms;

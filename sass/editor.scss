@@ -1,0 +1,21 @@
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+#editor .editor-styles-wrapper {
+    background-color: $color__background-body;
+    color: $color__text-main;
+	font-family: $font__main;
+	line-height: $font__line-height-body;
+    padding: 0;
+
+    @import "base/shared/shared";
+
+    .edit-post-visual-editor__post-title-wrapper,
+    .is-root-container {
+        @include container;
+    }
+    
+    .wp-block {
+        max-width: 100vw;
+    }
+}

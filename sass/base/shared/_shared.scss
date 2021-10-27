@@ -1,0 +1,36 @@
+/* Blocks
+--------------------------------------------- */
+@import "../blocks/shared";
+
+/* Typography
+--------------------------------------------- */
+@import "../typography/headings";
+
+/* Shared Utilities
+--------------------------------------------- */
+.has-main-background-color {
+    background-color: $color__main;
+    color: $color__gray;
+}
+
+.has-accent-background-color {
+    background-color: $color__accent;
+    color: $color__gray;
+}
+
+.has-gray-background-color {
+    background-color: $color__gray;
+    color: $color__text-main;
+}
+
+.has-main-color {
+    color: $color__main;
+}
+
+.has-accent-color {
+    color: $color__accent;
+}
+
+.has-gray-color {
+    color: $color__gray;
+}
