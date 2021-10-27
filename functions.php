@@ -100,6 +100,35 @@ if ( ! function_exists( 'palmetto_care_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+        // Add theme support for custom color palette
+        add_theme_support( 'editor-color-palette', array(
+            array(
+                'name'  => esc_attr__( 'main', 'palmetto-care' ),
+                'slug'  => 'main',
+                'color' => '#101C4E',
+            ),
+            array(
+                'name'  => esc_attr__( 'accent', 'palmetto-care' ),
+                'slug'  => 'accent',
+                'color' => '#A20031',
+            ),
+            array(
+                'name'  => esc_attr__( 'gray', 'palmetto-care' ),
+                'slug'  => 'gray',
+                'color' => '#f6f7fa',
+            ),
+        ) );
+
+        // Add theme support disable custom color
+        add_theme_support( 'disable-custom-colors' );
+
+        // Add theme support disable gradients
+        add_theme_support( 'disable-custom-gradients' );
+        add_theme_support(
+            'editor-gradient-presets',
+            array()
+        );
 	}
 endif;
 add_action( 'after_setup_theme', 'palmetto_care_setup' );
@@ -140,6 +169,7 @@ add_action( 'widgets_init', 'palmetto_care_widgets_init' );
  * Enqueue scripts and styles.
  */
 function palmetto_care_scripts() {
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap', false );
 	wp_enqueue_style( 'palmetto-care-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'palmetto-care-style', 'rtl', 'replace' );
 
@@ -150,6 +180,15 @@ function palmetto_care_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'palmetto_care_scripts' );
+
+/**
+ * Enqueue admin scripts and styles.
+ */
+function palmetto_care_admin_scripts() {
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap', false );
+	wp_enqueue_style( 'palmetto-care-admin-style', get_template_directory_uri() . '/editor.css', array(), _S_VERSION );
+}
+add_action( 'admin_enqueue_scripts', 'palmetto_care_admin_scripts' );
 
 /**
  * Implement the Custom Header feature.
