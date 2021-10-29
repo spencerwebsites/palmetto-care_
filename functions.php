@@ -129,6 +129,9 @@ if ( ! function_exists( 'palmetto_care_setup' ) ) :
             'editor-gradient-presets',
             array()
         );
+
+        // Add excerpts to pages
+        add_post_type_support( 'page', 'excerpt' );
 	}
 endif;
 add_action( 'after_setup_theme', 'palmetto_care_setup' );
